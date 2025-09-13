@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Khalid Elsaid — Orthopedic Surgeon | د. خالد السعيد</title>
+<meta name="description" content="Orthopedic surgeon in Khamis Mushait, Saudi Arabia — consultations, joint replacement, sports injuries. د. خالد السعيد — استشاري جراحة عظام.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#f7f8fb;
+--card:#ffffff;
+--primary:#0b6cf0;
+--muted:#6b7280;
+--radius:12px;
+--max-width:1100px;
+--gap:18px;
+font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+color: #0f1724;
+}
+body.arabic { font-family: "Noto Naskh Arabic", Inter, system-ui; }
+html,body{height:100%;margin:0;background:var(--bg);}
+.container{max-width:var(--max-width);margin:28px auto;padding:20px;display:grid;gap:var(--gap);}
+header{background:linear-gradient(90deg, rgba(11,108,240,0.12), rgba(11,108,240,0.03));
+border-radius:var(--radius);padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:64px;height:64px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);}
+h1.title{margin:0;font-size:18px}
+p.subtitle{margin:0;color:var(--muted);font-size:13px}
+nav { display:flex; gap:10px; align-items:center; }
+.lang-switch{display:flex;gap:8px;border-radius:10px;overflow:hidden;background:var(--card);}
+.lang-switch button{border:0;background:transparent;padding:8px 12px;cursor:pointer;font-weight:600;}
+.lang-switch button.active{background:var(--primary);color:white;}
+.hero{display:flex;gap:18px;align-items:center;padding:18px;border-radius:12px;background:var(--card);}
+.hero .intro{flex:1}
+.hero h2{margin:0 0 6px 0;font-size:20px}
+.hero p{margin:0;color:var(--muted)}
+.btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;}
+.btn.primary{background:var(--primary);color:white;}
+.btn.ghost{background:transparent;border:1px solid #e6e9ef;color:var(--primary);}
+.grid{display:grid;grid-template-columns: repeat(auto-fit, minmax(260px,1fr));gap:16px;}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 16px rgba(2,6,23,0.03);}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:12px 0;}
+body.rtl { direction: rtl; }
+</style>
+<script>
+const CONTENT = {
+en: {
+name: "Dr. Khalid Elsaid",
+title: "Orthopedic Surgeon — Senior Registrar",
+sub: "Consultations • Trauma care • Sports injuries • Arthroscopy • Joint replacement",
+aboutTitle: "About",
+about: "Dr. Khalid Elsaid is an orthopedic surgeon based in Khamis Mushait, Saudi Arabia. He specializes in joint replacement, arthroscopy of the shoulder and knee, hand surgery, trauma, and sports injuries. He currently works at Althemal Medical Center for Day Surgery.",
+servicesTitle: "Services",
+services: [
+{t: "Orthopedic Consultations", d: "In-person and online consultations for all orthopedic conditions."},
+{t: "Trauma & Fracture Care", d: "Expert management of fractures and musculoskeletal injuries."},
+{t: "Sports Medicine", d: "Diagnosis and treatment of sports-related injuries."},
+{t: "Arthroscopy & Joint Replacement", d: "Shoulder & knee arthroscopy, hip & knee replacement."}
+],
+contactTitle: "Contact & Location",
+phoneLabel: "Phone",
+emailLabel: "Email",
+whatsapp: "Chat on WhatsApp",
+footer: "© " + new Date().getFullYear() + " Dr. Khalid Elsaid. All rights reserved."
+},
+ar: {
+name: "د. خالد السعيد",
+title: "استشاري جراحة العظام",
+sub: "استشارات • إصابات وكسور • إصابات الملاعب • مناظير • استبدال المفاصل",
+aboutTitle: "نبذة",
+about: "د. خالد السعيد، جراح عظام يعمل في خميس مشيط، السعودية. متخصص في استبدال المفاصل، مناظير الكتف والركبة، جراحات اليد، الإصابات والكسور، وإصابات الملاعب. يعمل حاليًا في مركز الثمال لجراحة اليوم الواحد.",
+servicesTitle: "الخدمات",
+services: [
+{t: "استشارات عظام", d: "استشارات مباشرة وأونلاين لجميع حالات العظام."},
+{t: "إصابات وكسور", d: "إدارة متخصصة للكسور والإصابات العضلية الهيكلية."},
+{t: "طب الرياضة", d: "تشخيص وعلاج إصابات الملاعب."},
+{t: "المناظير واستبدال المفاصل", d: "مناظير الكتف والركبة واستبدال مفصل الورك والركبة."}
+],
+contactTitle: "التواصل والموقع",
+phoneLabel: "الهاتف",
+emailLabel: "البريد الإلكتروني",
+whatsapp: "تواصل عبر واتساب",
+footer: "© " + new Date().getFullYear() + " د. خالد السعيد. كل الحقوق محفوظة."
+}
+};
+
+let currentLang = 'en';
+function setLanguage(lang){
+currentLang = lang;
+const data = CONTENT[lang];
+document.getElementById('site-name').textContent = data.name;
+document.getElementById('site-title').textContent = data.title;
+document.getElementById('site-sub').textContent = data.sub;
+document.getElementById('about-title').textContent = data.aboutTitle;
+document.getElementById('about-text').textContent = data.about;
+document.getElementById('services-title').textContent = data.servicesTitle;
+const services = document.getElementById('services-list');
+services.innerHTML = '';
+data.services.forEach(s=>{
+const div=document.createElement('div');
+div.className='card';
+div.innerHTML=`<h3>${s.t}</h3><p>${s.d}</p>`;
+services.appendChild(div);
+});
+document.getElementById('contact-title').textContent=data.contactTitle;
+document.getElementById('phone-label').textContent=data.phoneLabel+":";
+document.getElementById('email-label').textContent=data.emailLabel+":";
+document.getElementById('whatsapp-btn').textContent=data.whatsapp;
+document.getElementById('site-footer').textContent=data.footer;
+document.documentElement.dir = (lang==='ar')?'rtl':'ltr';
+document.body.classList.toggle('arabic',lang==='ar');
+document.body.classList.toggle('rtl',lang==='ar');
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+btn.classList.toggle('active',btn.dataset.lang===lang);
+});
+}
+document.addEventListener('DOMContentLoaded',()=>{
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+btn.addEventListener('click',()=>setLanguage(btn.dataset.lang));
+});
+setLanguage('en');
+});
+</script>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="brand">
+<div class="logo">Ortho</div>
+<div>
+<h1 id="site-name" class="title">Dr. Khalid Elsaid</h1>
+<p id="site-sub" class="subtitle">Orthopedic Surgeon</p>
+</div>
+</div>
+<nav>
+<div class="lang-switch">
+<button data-lang="en" class="active">EN</button>
+<button data-lang="ar">ع</button>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="intro">
+<h2 id="site-title">Orthopedic Surgeon — Senior Registrar</h2>
+<p id="site-sub">Consultations • Trauma • Sports injuries</p>
+<div class="cta" style="margin-top:10px;">
+<a id="whatsapp-btn" class="btn primary" href="https://wa.me/966565245159" target="_blank">Chat on WhatsApp</a>
+<a class="btn ghost" href="mailto:khaliddaader29@gmail.com">Email</a>
+</div>
+</div>
+<div>
+<img id="profile" src="assets/profile.jpg" alt="Dr Khalid Elsaid" style="width:180px;height:220px;border-radius:12px;object-fit:cover;box-shadow:0 10px 30px rgba(2,6,23,0.06)">
+</div>
+</section>
+
+<section class="card">
+<h3 id="about-title">About</h3>
+<p id="about-text"></p>
+</section>
+
+<section>
+<h3 id="services-title">Services</h3>
+<div id="services-list" class="grid"></div>
+</section>
+
+<section class="card">
+<h3 id="contact-title">Contact & Location</h3>
+<p><strong id="phone-label">Phone:</strong> <a href="tel:+966565245159">+966 56 524 5159</a></p>
+<p><strong id="email-label">Email:</strong> <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
+<div style="margin-top:12px; overflow:hidden; border-radius:12px;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.193416960273!2d42.802531714907836!3d18.286943244423056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fb574df33a2361%3A0x581e84c11997e855!2sAlthemal%20Medical%20Center%20for%20Day%20Surgery!5e0!3m2!1sen!2ssa!4v1690!5m2!1sen!2ssa"
+width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</section>
+
+<footer>
+<p id="site-footer">© 2025 Dr. Khalid Elsaid. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html>
